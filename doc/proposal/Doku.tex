@@ -1,0 +1,114 @@
+%%%% SEITENRAENDER, SCHRIFTGROESSE UND ZEILENABSTAND NICHT ABAENDERN => SONST GIBT ES PUNKTEABZUG
+\documentclass[a4paper,11pt,singlespacing]{article}
+% \usepackage[left=2.5cm,right=2.5cm,top=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{biblatex}
+
+\addbibresource{sample.bib}
+
+
+\usepackage{listings,xcolor}
+%opening
+\title{Self-supervised training of a neural network for obstacle avoidance}
+\author{
+	Martin Samuel Lanz Mat.No. 28865
+	}
+
+
+\begin{document}
+% Absatzeinrückung verhindern
+\setlength{\parindent}{0ex}
+
+
+\maketitle
+
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+
+
+\section{Introduction}
+The goal of this Bachelor thesis is to develop a self supervised training and obstacle avoidance algorithm, where a 2 dimensional image serves as input, whereas a laser scanner provides the relevant ground truth necessary for training a neural network.
+
+Self supervision has the advantage that no human labelling is necessary to gather data for training. The project will show that this is possible with a simple camera and a laser. Other projects dealing with similar approaches will be referred to. 
+
+The goal is further to implement as many pieces, of a machine learning pipeline, as autonomous as possible. The robot shall be started in an environment, gathering data and use that data for training. Based on the trained model, the robot should be able to avoid obstacles.
+
+The complexity of the training environment should be increased after finishing a prototype of the entire pipeline.
+
+\newpage
+\section{Implementation}
+As a first step the project is set up in TIAGo simulation. If time and resources are available, at a later stage, the project can also be tested in the robotic laboratory of the university.\\
+
+The project is divided in the following tasks which are set up as milestones in Gitlab:
+
+\begin{center}
+\begin{tabular}{|c|l|}
+ Deadline & Milestone\\ [0.5ex]
+\hline
+ 14.05.2020 & Data acquisition\\ 
+ 22.05.2020 & Feature extraction\\  
+ 30.05.2020 & Data verification\\
+ 30.06.2020 & Model building and training\\
+ 16.07.2020 & Model deployment\\
+ 17.08.2020 & Performance monitoring\\
+ 31.08.2020 & Documentation\\
+ 15.09.2020 & Docker implementation\\
+ 15.09.2020 & Presentation
+\end{tabular}
+\end{center}
+
+
+\subsection{Data acquisition}
+In this the simulation with the robot is properly set up, in order to develop an algorithm for the robot gathering essential data autonomously. Instead of simply recording everything, the algorithm is supposed to record information as suggested in literature in order to create a highly efficient dataset for training.
+
+\subsection{Feature extraction}
+Here the recorded data is going to be extracted and prepared accordingly. At this step the information from the different sensors, needs to be put together, in order to train a dataset in a specific format, which can be directly fed to a convolutional neural network. It is essential at this step, of how to poperly relate the input image to the ground truth laser data. 
+
+\subsection{Data verification}
+Data verification deals about detecting early erros with the goal to improve a better model quality and saving debugging time at a later stage. Following terms can play an additional role in this step:
+\begin{itemize}
+  \item Normalization
+  \item Transformation
+  \item Validation
+  \item Featurization
+\end{itemize}
+
+\subsection{Model building and training}
+At this step the model is built and trained. As the input sensor is a 2 dimensional image, a neural network is chosen as a model. To increase training speed, it might be necessary to set up an environment with GPU support. Furthermore it is necessary to observe the following terms in order to improve the model:
+\begin{itemize}
+  \item Hyperparameter tuning
+  \item Automatic model selection
+  \item Model testing
+  \item Model validation
+\end{itemize}
+
+\subsection{Model deployment}
+Model deployment is about setting up the model for use in order to run it on the robot in the simulation or the real world. Once it is set up, it can be used to predict data. Before the final obstacle avoidance algorithm is implemented, it is necessary to test the performance in the next step.
+
+\subsection{Performance monitoring}
+Once the model is deployed it is continously monitored to figure out of how it works and whether it needs to be recalibrated. At this step the results are saved and compared to different type of models trained with different parameters. 
+
+\subsection{Docker implementation}
+After the implementation is finished, the entire project is expected to be deployed inside of a docker container in order to be able to set it up easily on different machines.
+
+\subsection{Presentation}
+As a final step, the entire project is to be presented. Some reviews of how to properly set up a professional presentation might be of advantage. Knowledge from previous courses can be looked up when setting it up. To increase the understandability, diagrams can be used.
+
+\newpage
+\section{Results}
+The results of this project will be properly documented. Several models can be compared and diagrams used to display the different results.\\
+
+The robot should be able to reach different goals,avoiding obstacles in unknown environments which might be changing in real time. The camera shouold be used here as the only input parameter. If time and resources are available the performance of the simulation can be tested against a real robotic implementation from the laboratory
+
+\printbibliography[heading=bibintoc]
+
+
+\end{document}
+

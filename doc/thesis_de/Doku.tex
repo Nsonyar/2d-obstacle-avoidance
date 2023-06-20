@@ -1,0 +1,49 @@
+%%%% SEITENRAENDER, SCHRIFTGROESSE UND ZEILENABSTAND NICHT ABAENDERN => SONST GIBT ES PUNKTEABZUG
+\documentclass[a4paper,11pt,singlespacing]{article}
+% \usepackage[left=2.5cm,right=2.5cm,top=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{biblatex}
+
+\addbibresource{sample.bib}
+
+
+\usepackage{listings,xcolor}
+%opening
+\title{Project title}
+\author{
+	Name Mat.No.
+	}
+
+
+\begin{document}
+% Absatzeinrückung verhindern
+\setlength{\parindent}{0ex}
+
+
+\maketitle
+
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+
+
+\section{Introduction}
+
+
+\section{Implementation}
+
+
+\section{Results}
+
+
+\printbibliography[heading=bibintoc]
+
+
+\end{document}
+

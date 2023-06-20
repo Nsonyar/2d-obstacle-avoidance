@@ -1,0 +1,91 @@
+%Titelseite
+\begin{titlepage}
+\sffamily
+\setlength{\tabcolsep}{0mm}
+\begin{tabular*}{\textwidth}{l@{\extracolsep\fill}r} 
+
+%\hspace{-0.4cm}
+%\includegraphics[width=6cm]{Bilder/logo_welle_en}  % Englische Version des Logos 
+\includegraphics[width=5cm]{Bilder/rwu} % Deutsche Version des Logos
+
+  &
+\raisebox{3mm}{
+	\begin{tabular}{r}
+%\rule{0cm}{0.5cm}
+Course Applied Computer Science\\[0.5mm]
+School of Electrical engineering and Computer Science\\
+\end{tabular}}
+\end{tabular*}
+\setlength{\tabcolsep}{6pt}
+
+\vspace*{4cm}
+\begin{center}
+\textbf{\Large{Bachelor-Thesis}}\\
+\vspace*{1cm}
+\textbf{\LARGE{Self-supervised training of a neural network for obstacle avoidance}}\\
+\vspace*{2cm}
+\large{for the purpose of obtaining the degree}\\[2mm]
+\large{Bachelor of Applied Computer Science}\\
+\end{center}
+
+%\vfill
+\vspace{2cm}
+\begin{center}
+
+	submitted by:\\[5mm]
+{\Large Martin Samuel Lanz} \\[5mm]
+    \today \\[3cm]
+{\normalsize
+	\begin{tabular}{rl}
+	1. Gutachter: 	& Prof. Dr. Markus Schneider\\
+	2. Gutachter: 	& M.Sc. Benjamin Stähle 
+	\end{tabular}
+}
+\end{center}
+
+\end{titlepage}
+
+
+%Eidesstattliche Erklärung
+\begin{newpage}
+\vspace*{\fill}
+\section*{Eidesstattliche Erklärung}
+Hiermit versichere ich, die vorliegende Arbeit selbststndig und unter ausschlielicher Verwendung der angegebenen Literatur und Hilfsmittel erstellt zu haben. Die Arbeit wurde bisher, in gleicher oder hnlicher Form, keiner anderen Prfungsbehrde vorgelegt und auch nicht verffentlicht.\\\\
+
+\vspace{3cm}
+\begin{tabular*}{\textwidth}{c@{\extracolsep\fill}cc}
+\cline{1-1}
+\cline{3-3}
+\\
+\ \ \ \ \ \ \ \ \ Unterschrift\ \ \ \ \ \ \ \ \ \ & & \ \ \ \ \ \ \ \ \ Ort, Datum\ \ \ \ \ \ \ \ \ \\
+\end{tabular*}
+\end{newpage}
+
+
+
+%Vorwort, Zusammenfassung(Abstract), Danksagung(Acknowledgements)
+\begin{newpage}
+\vspace*{\fill}
+\section*{Abstract}
+The goal of this Bachelor thesis is to develop a self supervised training and obstacle avoidance algorithm, where a 2 dimensional image serves as input, whereas a laser scanner provides the relevant ground truth necessary for training.\\
+
+Self supervision has the advantage that no human labelling is necessary to
+gather data for training. The project will show that this is possible with a
+simple camera and a laser. Other projects will be referred to, which deal
+with similar approaches.\\
+
+The goal is further, to implement as many pieces, of a machine learning
+pipeline, as possible, fully autonomous where a robot can be started in a
+given environment, gathering data and use that data for training and then
+operating on the deployed model.\\
+
+I have chosen this topic not because of merely personal interests about robotics and artificial intelligence, but also as this choice makes sense in respect to the in-depth profile of our course and to consolidate knowledge required in previous classes like, Autonomous Mobile Robots or Artificial Intelligence.\\
+
+\section*{Acknowledgments}
+I would like to furthermore express my gratidute to Mr. Benjamin Stähle M.Sc., who gave me excellent support and advice, not only during my bachelor thesis but also in several courses about  mobile robots.\\
+
+I would also like to thank Mr. Professor Dr. Schneider, who is the first reviewer to supervise this work.
+\end{newpage}
+
+
+\newpage

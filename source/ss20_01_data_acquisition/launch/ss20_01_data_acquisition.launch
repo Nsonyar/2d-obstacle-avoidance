@@ -1,0 +1,4 @@
+<launch>
+<arg name="args" default="default"/>
+<node pkg="ss20_01_data_acquisition" type="data_acquisition_node.py" name="data_acquisition" output="screen" args="$(arg args)"></node>
+</launch>

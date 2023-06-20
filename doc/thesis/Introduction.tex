@@ -1,0 +1,34 @@
+\section{Introduction \label{Introduction} }
+Data preparation and labeling is an expensive task in many
+ways for technologies in Machine Learning. Most data does not have the proper form to be used for training. Due to Cognilytica, which is an analyst firm for the industry, specialized in AI technologies, 80 percent of AI project time is used on obtaining, preparing, and labeling data. Due to \cite{cognilytica}, the market for data preparation and labeling will exceed 7 billion dollars by 2023.\\
+
+Recalling a general definition of Artificial Intelligence by \cite{rich1983artificial}, which states that artificial intelligence is the study of how to make computers do things at which, at the moment, people are better, it might be worth to invest time and effort into technologies of autonomous labeling, which is called self-supervision or self-supervised learning.\\
+
+Among fields of artificial intelligence, self-supervised learning is defined lightly different. For robotics and this project, it is about exploiting relations between several sensor inputs like a camera, lidar, or laser sensors, to automatically create a dataset for training.\\
+
+This project's basic concept is to relate camera input with short-range sensors to create binary labels for training automatically. To have a supervisory signal, complementing camera input, is described in many other projects. \cite{5979661} uses laser data, complementing monocular vision to create traversability labels. \cite{nava2019learning} uses bumpers and color sensors to relate them with camera input, and \cite{Dahlkamp-RSS-06} also combines laser data and images to create a drivability map. \secref{RelatedWork} discusses related implementations in more detail.\\
+
+As it is intended to use the TIAGo simulation environment for this project, its laser scanner will serve as a short-range sensor used in combination with its camera input. To increase performance, images recorded from the camera at position $0$ are related to sensor input at position $0$, but also with all future positions from the current, towards the final recording position. This concept suggested in \cite{nava2019learning} can be used to train a neural network to predict obstacles around the robot's vicinity, given an image as input.\\
+
+\secref{ProblemDefinition} further specifies the main contributions, and \secref{RelatedWork} presents similar implementations about self-supervised learning, focusing on robotics. In \secref{Implementation}, the concept of this project, its corresponding pipeline and an obstacle avoidance controller are proposed. In \secref{ExperimentalResults} the experimental results are presented. Several models and their corresponding parameters are compared with statistical methods and results obtained from the deployment to quantify their performance. \secref{Conclusion} summarizes the project's conclusions and outlines its limitations.
+
+\subsection{Main Contributions \label{MainContributions} }
+This project aims to develop a machine learning pipeline for a self-supervised learning robot simulation that is as fully autonomous as possible. The implementation is expected to run independently from within a docker environment. The version control system for this project is GitLab, which allows the user to plan, implement or test repositories. The project is planned with Milestones, which mark specific goals along the time line. Every task is defined by its corresponding Issue within GitLab, to properly relate and control the project's cycles.\\
+
+The following list further specifies the main contributions of this project:
+\begin{itemize}
+
+\item Development of a fully autonomous \textbf{Data Acquisition Controller}, to collect necessary sensor data for training.
+
+\item Fully autonomous creation of a dataset for \textbf{Feature Extraction}, with self-supervised learning techniques proposed in \cite{nava2019learning}.
+
+\item Implementation of a \textbf{Training environment}, to create a model used for deployment.
+
+\item Development of \textbf{Testing} mechanisms, to provide efficient performance metrics.
+
+\item Creation of a \textbf{Performance Monitoring} setup, to efficiently process test results, to supervise and organize files created, and to recognize bottlenecks and errors, which slow down or even cause the pipeline to fail.
+
+\item Development of an \textbf{Obstacle Avoidance Controller}, which is able to fully autonomous, maneuver in different simulation environments, by given just camera data as input. 
+
+\end{itemize}
+

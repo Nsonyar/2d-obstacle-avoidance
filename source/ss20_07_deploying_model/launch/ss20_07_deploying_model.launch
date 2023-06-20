@@ -1,0 +1,3 @@
+<launch>
+<node pkg="ss20_07_deploying_model" type="deploying_model_node.py" name="deploying_model" output="screen"></node>
+</launch>
